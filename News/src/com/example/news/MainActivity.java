@@ -1,18 +1,29 @@
 package com.example.news;
 
+import com.example.news.adapter.CategoryAdapter;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridView;
 
 public class MainActivity extends Activity
 {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		String[] categories = this.getResources().getStringArray(R.array.categories);
+		
+		// ÃÌº”∑÷¿‡
+		GridView grid = new GridView(this);
+		grid.setNumColumns(categories.length);
+		grid.setColumnWidth(GridView.AUTO_FIT);
+		grid.setAdapter(new CategoryAdapter(this, categories));
 	}
 
 	@Override
