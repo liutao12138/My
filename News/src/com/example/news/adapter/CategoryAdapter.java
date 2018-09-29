@@ -1,13 +1,14 @@
 package com.example.news.adapter;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 /**
-* 2018Äê9ÔÂ28ÈÕ ÏÂÎç8:25:23 10437
+* 2018å¹´9æœˆ28æ—¥ 8:25:23 10437
 */
 public class CategoryAdapter extends BaseAdapter
 {
@@ -50,6 +51,9 @@ public class CategoryAdapter extends BaseAdapter
 //		}
 		TextView text = new TextView(context);
 		text.setText(list[position]);
+		text.setTextSize(20);
+		text.setGravity(Gravity.CENTER);
+		text.setWidth(100);
 		return text;
 	}
 

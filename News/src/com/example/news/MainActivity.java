@@ -6,7 +6,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 
 public class MainActivity extends Activity
 {
@@ -19,11 +21,17 @@ public class MainActivity extends Activity
 		
 		String[] categories = this.getResources().getStringArray(R.array.categories);
 		
-		// ÃÌº”∑÷¿‡
+		LayoutParams params = new LayoutParams(categories.length * 170 + categories.length, LayoutParams.WRAP_CONTENT);
+		
+		
+		// Ê∑ªÂä†title
 		GridView grid = new GridView(this);
+		grid.setLayoutParams(params);
 		grid.setNumColumns(categories.length);
-		grid.setColumnWidth(GridView.AUTO_FIT);
+		grid.setColumnWidth(160);
 		grid.setAdapter(new CategoryAdapter(this, categories));
+		LinearLayout scroll = (LinearLayout) this.findViewById(R.id.category_frame);
+		scroll.addView(grid);
 	}
 
 	@Override
