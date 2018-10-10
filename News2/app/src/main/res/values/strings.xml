@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">今朝新闻</string>
+    <string name="title_refresh">刷新</string>
+    <string name="action_settings">Settings</string>
+</resources>
