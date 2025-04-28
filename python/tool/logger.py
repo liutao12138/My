@@ -1,6 +1,6 @@
 import logging
 
-
+# test
 class Logger(logging.getLoggerClass()):
 
     def __init__(self, name, log=False, console=True, level=logging.INFO, path='log.log'):
